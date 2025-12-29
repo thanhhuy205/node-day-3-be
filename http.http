@@ -1,0 +1,51 @@
+GET  http://localhost:3000/api/test/test-success
+
+GET  http://localhost:3000/api/test/test-error
+
+
+
+GET  http://localhost:3000/api/tasks
+
+
+POST  http://localhost:3000/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Task 1"
+}
+
+
+GET  http://localhost:3000/api/tasks/1
+
+
+PUT  http://localhost:3000/api/tasks/1
+Content-Type: application/json
+
+{
+  "title": "Task 1 updated"
+}
+
+
+PUT  http://localhost:3000/api/tasks/2
+Content-Type: application/json
+
+{
+  "completed": true
+}
+
+
+DELETE  http://localhost:3000/api/tasks/1
+
+
+GET  http://localhost:3000/api/tasks/999999
+
+
+PUT  http://localhost:3000/api/tasks/999999
+Content-Type: application/json
+
+{
+  "completed": true
+}
+
+
+DELETE  http://localhost:3000/api/tasks/999999
