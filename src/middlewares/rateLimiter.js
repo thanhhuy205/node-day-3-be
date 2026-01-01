@@ -5,13 +5,13 @@ const createRateLimiter = ({ windowMs, maxRequests, message }) => {
     const now = Date.now();
 
     const storeIp = store.get(ipRequest);
-  
+
     if (!storeIp || now - storeIp.startWindowMs >= windowMs) {
       store.set(ipRequest, {
         countRequest: 1,
         startWindowMs: now,
       });
-      next();
+      return next();
     }
 
     storeIp.countRequest += 1;
